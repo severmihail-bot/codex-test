@@ -1,5 +1,5 @@
 {
-  "imported_at": "2026-06-23T12:20:57.425662+00:00",
+  "imported_at": "2026-06-23T15:56:28.468167+00:00",
   "source": "google_drive",
   "accepted_extensions": [
     ".md",
@@ -7,12 +7,12 @@
   ],
   "files": [
     {
-      "drive_file_id": "1nluPwMFrN8FiqTcL2zUT2lEo9ruvSepL",
-      "name": "Citi In-House Banking - ADAMA.md",
-      "path": "sources/raw/Citi In-House Banking - ADAMA.md",
+      "drive_file_id": "1-koYP4sjBw-82UMRQb40CZRJlpYB6sKa",
+      "name": "LEGEA contabilității nr. 82 din 24 decembrie 1991.md",
+      "path": "sources/raw/LEGEA contabilității nr. 82 din 24 decembrie 1991.md",
       "mime_type": "text/markdown",
-      "modified_time": "2026-06-15T11:21:38.000Z",
-      "size": "5371"
+      "modified_time": "2026-06-23T13:07:33.000Z",
+      "size": "78021"
     }
   ]
 }
