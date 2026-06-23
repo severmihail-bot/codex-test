@@ -1,0 +1,14 @@
+# Exemplu de intrare pentru metadata/documents.yml
+# Copiază structura sub cheia `documents:` și completează valorile reale.
+
+- id: ""
+  title: ""
+  source_type: ""
+  jurisdiction: "RO"
+  language: "ro"
+  raw_file: ""
+  normalized_file: ""
+  knowledge_dir: ""
+  drive_file_id: ""
+  status: "draft"
+  review_required: true
