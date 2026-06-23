@@ -1,0 +1,19 @@
+# Google Drive folder layout for this project.
+# Fill actual folder IDs in GitHub Secrets, not in this file.
+
+root_folder:
+  name: "Legal Knowledge"
+  secret: "GOOGLE_DRIVE_ROOT_FOLDER_ID"
+
+sources_folder:
+  name: "Legal Sources"
+  parent: "Legal Knowledge"
+  secret: "GOOGLE_DRIVE_SOURCES_FOLDER_ID"
+  accepted_extensions:
+    - ".md"
+    - ".txt"
+
+export_folder:
+  name: "Legal Knowledge Export"
+  parent: "Legal Knowledge"
+  secret: "GOOGLE_DRIVE_EXPORT_FOLDER_ID"

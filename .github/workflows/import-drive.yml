@@ -1,0 +1,52 @@
+name: Import from Google Drive
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GOOGLE_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Google Drive dependencies
+        run: pip install -r requirements-drive.txt
+
+      - name: Import sources from Google Drive
+        env:
+          GOOGLE_DRIVE_SOURCES_FOLDER_ID: ${{ secrets.GOOGLE_DRIVE_SOURCES_FOLDER_ID }}
+        run: python scripts/import_from_drive.py
+
+      - name: Validate metadata
+        run: python scripts/validate_metadata.py
+
+      - name: Validate knowledge library
+        run: python scripts/validate_knowledge.py
+
+      - name: Create pull request for imported sources
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Import sources from Google Drive"
+          title: "Import sources from Google Drive"
+          body: "Automated import of supported source files from Google Drive."
+          branch: "import/google-drive-sources"
+          add-paths: |
+            sources/raw/**

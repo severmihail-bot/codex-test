@@ -1,0 +1,4 @@
+# Registrul documentelor gestionate de proiect.
+# Va fi extins în pașii următori cu ID-uri Google Drive, fișiere sursă și statusuri.
+
+documents: []
